@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://flux-15.github.io/sitemap.xml
