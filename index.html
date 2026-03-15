@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="ewxiq8XZgPDtp5juN7pYk-lIEfz4n_y9jKATaxkgy5Y" />
+    <title>Om Patel — Robotics &amp; Research Engineer</title>
+
+    <meta name="description"
+        content="Portfolio of Om Patel (Flux) — Robotics, Embedded Systems, IoT, MATLAB, ESP32 projects, CubeSat research, LiFi systems and robotics engineering.">
+    <meta name="keywords"
+        content="Om Patel, Flux, robotics engineer, ESP32 projects, embedded systems, CubeSat research, MATLAB robotics">
+    <meta name="author" content="Om Patel">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <script defer src="script.js"></script>
+    <link rel="icon" href="logo_f.png" type="image/png">
+</head>
+
+<body class="is-loading">
+    <!-- ╔═══ CINEMATIC VIDEO INTRO ═══╗ -->
+    <div id="intro-overlay">
+        <video id="intro-video" src="f.mp4" muted playsinline preload="auto"></video>
+    </div>
+
+    <!-- ╔═══ ATMOSPHERIC LAYERS ═══╗ -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+    <div class="grain"></div>
+
+    <!-- ╔═══ NAVIGATION ═══╗ -->
+    <nav class="nav" id="navbar">
+        <div class="nav__inner">
+            <a href="#" class="nav__logo">Om<span> Patel</span></a>
+            <ul class="nav__links" id="nav-links">
+                <li><a href="#about" class="nav__link">About</a></li>
+                <li><a href="#projects" class="nav__link">Projects</a></li>
+                <li><a href="#research" class="nav__link">Research</a></li>
+                <li><a href="#skills" class="nav__link">Skills</a></li>
+                <li><a href="#feedback" class="nav__link">Feedback</a></li>
+                <li><a href="#gallery" class="nav__link">Gallery</a></li>
+                <li><a href="#blog" class="nav__link">Blog</a></li>
+                <li><a href="#contact" class="nav__link">Contact</a></li>
+            </ul>
+            <button class="nav__toggle" id="nav-toggle" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ╔═══════════════════════════════════════════════════════════╗
+         ║  HERO — INTERACTIVE PARTICLE CONSTELLATION                ║
+         ╚═══════════════════════════════════════════════════════════╝ -->
+    <header class="hero" id="home">
+        <canvas id="hero-canvas"></canvas>
+
+        <div class="hero__content">
+            <p class="hero__overline">
+                <span class="hero__overline-line"></span>
+                Robotics · Research · Engineering
+                <span class="hero__overline-line"></span>
+            </p>
+
+            <h1 class="hero__title">
+                <span class="hero__title-line"><span>Patel</span><span><em>Om</em></span></span>
+                <span class="hero__title-line"><span>Sanjaykumar</span></span>
+            </h1>
+
+            <p class="hero__subtitle">
+                Electronics & Communication Engineering student at PDEU building autonomous systems, custom flight controllers, and publishing research at the intersection of robotics, optimization, and wireless communication. I don't just study engineering — I ship it.
+            </p>
+
+            <div class="hero__stats">
+                <div class="hero__stat">
+                    <span class="hero__stat-value" data-count="9">0</span>+
+                    <span class="hero__stat-label">Published Papers</span>
+                </div>
+                <div class="hero__stat">
+                    <span class="hero__stat-value" data-count="11">0</span>+
+                    <span class="hero__stat-label">Projects Built</span>
+                </div>
+                <div class="hero__stat">
+                    <span class="hero__stat-value">PDEU</span>
+                    <span class="hero__stat-label">University</span>
+                </div>
+                <div class="hero__stat">
+                    <span class="hero__stat-value">India</span>
+                    <span class="hero__stat-label">Location</span>
+                </div>
+            </div>
+
+            <div class="hero__cta">
+                <a href="mailto:omspatel15@gmail.com" class="btn btn--primary magnetic">
+                    <span>Get in Touch</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/omspatel/" target="_blank" class="btn btn--ghost magnetic">
+                    <span>LinkedIn</span>
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="hero__scroll">
+            <span class="hero__scroll-text">Scroll</span>
+            <span class="hero__scroll-line"></span>
+        </div>
+    </header>
+
+    <div class="h-divider"></div>
+
+    <main>
+
+        <!-- ╔═══ ABOUT ═══╗ -->
+        <section id="about">
+            <div class="section-container">
+                <div class="sect-header reveal">
+                    <p class="sect-label">01 — About</p>
+                    <h2 class="sect-title">Building the <em>future,</em><br>one circuit at a time</h2>
+                </div>
+
+                <div class="about__grid">
+                    <div class="about__left reveal reveal-d1">
+                        <div class="about__text">
+                            <p>I'm <strong>Om Sanjaykumar Patel</strong> — a third-year Electronics & Communication Engineering student at Pandit Deendayal Energy University (PDEU), Gandhinagar. My journey in engineering didn't start at a university — it started with curiosity. From early schooling in Bharuch to completing a Diploma in Electrical Engineering at Shri K.J. Polytechnic, I've always preferred building things over just reading about them. That hands-on instinct led me to robotics, embedded systems, and eventually, research.</p>
+                            <p>Today, I work across the full stack of autonomous systems — from designing custom flight controller PCBs on STM32H7 to implementing hybrid PSO-A* algorithms for robot path planning, to publishing research on VLC-based swarm coordination and quantum-secured optical networks. I've interned at Dexsent Robotics, worked in the robotics research lab at PDEU, and am currently a Research Intern at Nav Wireless Technologies.</p>
+                        </div>
+                        <div class="about__highlight">
+                            Beyond research, I lead with intention. I serve as <strong>General Secretary of the IEEE RAS PDEU Student Branch Chapter</strong>, PRO & Outreach Head for Team Cretus, and Technical Head at Brahmand. I believe engineering leadership means building community as much as it means building systems.
+                        </div>
+
+                        <div class="about__timeline reveal">
+                            <h3 class="timeline-title">Journey</h3>
+                            <div class="timeline" id="interactive-timeline">
+                                <div class="timeline-node">
+                                    <div class="node-point"></div>
+                                    <div class="node-content">
+                                        <h4 class="node-year">2026</h4>
+                                        <div class="node-details">
+                                            <p>Nav Wireless Technologies</p>
+                                            <p class="node-role">Research Intern — Optical Wireless</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-line"></div>
+                                <div class="timeline-node">
+                                    <div class="node-point"></div>
+                                    <div class="node-content">
+                                        <h4 class="node-year">2025</h4>
+                                        <div class="node-details">
+                                            <p>Leadership & Internships</p>
+                                            <p class="node-role">IEEE RAS Gen Sec · Dexsent Engineering Intern</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-line"></div>
+                                <div class="timeline-node">
+                                    <div class="node-point"></div>
+                                    <div class="node-content">
+                                        <h4 class="node-year">2024</h4>
+                                        <div class="node-details">
+                                            <p>B.Tech ECE — PDEU</p>
+                                            <p class="node-role">Focus on Metaheuristics & EV Systems</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-line"></div>
+                                <div class="timeline-node">
+                                    <div class="node-point"></div>
+                                    <div class="node-content">
+                                        <h4 class="node-year">2022</h4>
+                                        <div class="node-details">
+                                            <p>Diploma in Electrical Engineering</p>
+                                            <p class="node-role">Shri K.J. Polytechnic, Bharuch</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-line"></div>
+                                <div class="timeline-node">
+                                    <div class="node-point"></div>
+                                    <div class="node-content">
+                                        <h4 class="node-year">2012</h4>
+                                        <div class="node-details">
+                                            <p>Early Education</p>
+                                            <p class="node-role">GNFC & Jai Ambe School, Bharuch</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about__photo-wrap reveal reveal-d2">
+                        <img src="/78c78300-6209-4b6e-ab4a-f9fe101a3609.png" alt="Om Patel" class="about__photo">
+                        <div class="about__photo-frame"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="h-divider"></div>
+
+        <!-- ╔═══════════════════════════════════════════════════════════╗
+             ║  PROJECTS — STICKY STACKING CARDS                        ║
+             ╚═══════════════════════════════════════════════════════════╝ -->
+        <section id="projects">
+            <div class="section-container">
+                <div class="sect-header reveal">
+                    <p class="sect-label">02 — Projects</p>
+                    <h2 class="sect-title">Selected <em>work</em></h2>
+                    <p class="sect-desc">Scroll through the stack. Each card peels away to reveal the next project.</p>
+                </div>
+
+                <div class="projects__stack">
+                    <!-- Project 1 -->
+                    <div class="stack-card reveal" style="z-index:1; --card-index:0;" data-type="project"
+                        data-title="2 Stacked Inverted Pendulum using PID" data-meta="Control Systems • Robotics"
+                        data-desc="A dual-stacked inverted pendulum system stabilized in real time using cascaded PID control loops."
+                        data-full="This project implements a classical yet challenging control problem — balancing two inverted pendulums stacked vertically on a single actuated cart. The system uses cascaded PID loops where the inner loop handles the lower pendulum's angle and the outer loop manages the upper pendulum, with both interacting dynamically. The controller was tuned using manual Ziegler-Nichols methods and iterative testing, providing insight into system coupling and the limits of linear control under nonlinear dynamics. The project reinforced deep understanding of control theory fundamentals — state feedback, system modeling, and real-time embedded implementation."
+                        data-tags="PID,Control Theory,Embedded Systems,Dynamic Systems,C++" data-link="#">
+                        <div class="stack-card__number">01</div>
+                        <div class="stack-card__body">
+                            <div class="stack-card__status"><span class="stack-card__status-dot" style="background:#00ff00;"></span> Completed</div>
+                            <h3 class="stack-card__title">2 Stacked Inverted Pendulum</h3>
+                            <div class="stack-card__tags">
+                                <span class="stack-card__tag">PID</span><span class="stack-card__tag">Control Theory</span><span class="stack-card__tag">C++</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="stack-card reveal" style="z-index:2; --card-index:1;" data-type="project"
+                        data-title="Self-Balancing Bot using LQR + Energy Shaping" data-meta="Control Systems • Robotics"
+                        data-desc="A two-wheeled self-balancing robot using a hybrid LQR and energy-based swing-up controller."
+                        data-full="This self-balancing robot goes beyond basic PID implementations by using a Linear Quadratic Regulator (LQR) derived from a full state-space model of the inverted pendulum on wheels. The LQR minimizes a cost function balancing control effort against deviation, resulting in a significantly more stable and responsive system than PID alone. An energy-shaping swing-up controller was integrated to bring the robot from a resting (down) position to the upright balance region autonomously."
+                        data-tags="LQR,Energy Shaping,State Space,IMU,Control Theory,Embedded C" data-link="#">
+                        <div class="stack-card__number">02</div>
+                        <div class="stack-card__body">
+                            <div class="stack-card__status"><span class="stack-card__status-dot" style="background:#00ff00;"></span> Completed</div>
+                            <h3 class="stack-card__title">LQR Self-Balancing Bot</h3>
+                            <div class="stack-card__tags">
+                                <span class="stack-card__tag">LQR</span><span class="stack-card__tag">State Space</span><span class="stack-card__tag">Embedded C</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="stack-card reveal" style="z-index:3; --card-index:2;" data-type="project"
+                        data-title="Autonomous TurtleBot using Hybrid PSO-A*" data-meta="Autonomous Robotics • Path Planning"
+                        data-desc="A ROS2-based autonomous robot combining Particle Swarm Optimization with A* for intelligent real-time navigation."
+                        data-full="This project implements a novel hybrid path-planning algorithm on a TurtleBot platform under ROS2. The classical A* algorithm provides global optimal path planning on a known map, while Particle Swarm Optimization (PSO) is layered on top for dynamic local replanning when obstacles are encountered in real time. The fusion of both methods yields a planner that is both globally optimal and locally adaptive. The system integrates LiDAR-based SLAM for map generation, ROS2 navigation stack, and a custom Python node running the hybrid planner."
+                        data-tags="ROS2,PSO,A*,Path Planning,SLAM,TurtleBot,Python" data-link="#">
+                        <div class="stack-card__number">03</div>
+                        <div class="stack-card__body">
+                            <div class="stack-card__status"><span class="stack-card__status-dot" style="background:#00ff00;"></span> Completed</div>
+                            <h3 class="stack-card__title">Hybrid PSO-A* TurtleBot</h3>
+                            <div class="stack-card__tags">
+                                <span class="stack-card__tag">ROS2</span><span class="stack-card__tag">PSO</span><span class="stack-card__tag">SLAM</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="stack-card reveal" style="z-index:4; --card-index:3;" data-type="project"
+                        data-title="Autonomous Drone VTOL using Sensor-Based FC" data-meta="Drones • Autonomous Systems"
+                        data-desc="A VTOL drone achieving autonomous hover and navigation using only onboard flight controller sensor fusion — no external positioning."
+                        data-full="This project focuses on achieving stable autonomous flight on a VTOL drone using only the sensor readings available natively on the flight controller — accelerometer, gyroscope, barometer, and optical flow. The goal is sensor-fusion-driven autonomy without reliance on GPS or external motion capture systems, making the platform viable for GPS-denied environments. The work involves custom EKF implementations for state estimation, PID and cascaded control for attitude and altitude hold."
+                        data-tags="VTOL,Sensor Fusion,EKF,Flight Controller,Autonomous Systems,PID" data-link="#">
+                        <div class="stack-card__number">04</div>
+                        <div class="stack-card__body">
+                            <div class="stack-card__status"><span class="stack-card__status-dot"></span> In Progress</div>
+                            <h3 class="stack-card__title">Autonomous Sensor-Based VTOL</h3>
+                            <div class="stack-card__tags">
+                                <span class="stack-card__tag">VTOL</span><span class="stack-card__tag">EKF</span><span class="stack-card__tag">PID</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="stack-card reveal" style="z-index:5; --card-index:4;" data-type="project"
+                        data-title="Open Manipulator Operation via CV + Controller" data-meta="Robotics • Computer Vision"
+                        data-desc="Teleoperation and autonomous pick-and-place of the OpenMANIPULATOR-X using real-time computer vision and a hardware controller interface."
+                        data-full="This project integrates a vision pipeline with the ROBOTIS OpenMANIPULATOR-X to enable both autonomous object detection/grasping and semi-autonomous controller-guided operation. The computer vision module uses a camera feed with OpenCV to detect target objects, compute their 3D position via inverse kinematics, and command the manipulator to reach and grasp. A secondary hardware controller interface allows a human operator to override or guide arm movements in real time."
+                        data-tags="OpenMANIPULATOR,Computer Vision,ROS2,MoveIt2,IK,OpenCV,Dynamixel" data-link="#">
+                        <div class="stack-card__number">05</div>
+                        <div class="stack-card__body">
+                            <div class="stack-card__status"><span class="stack-card__status-dot" style="background:#00ff00;"></span> Completed</div>
+                            <h3 class="stack-card__title">CV Manipulator Pick-and-Place</h3>
+                            <div class="stack-card__tags">
+                                <span class="stack-card__tag">Computer Vision</span><span class="stack-card__tag">MoveIt2</span><span class="stack-card__tag">ROS2</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div class="stack-card reveal" style="z-index:6; --card-index:5;" data-type="project"
+                        data-title="ESP32-Based Flight Controller" data-meta="Embedded Systems • Drones"
+                        data-desc="A fully functional drone flight controller built from scratch on ESP32, with IMU fusion, PID loops, and RC input handling."
+                        data-full="This project demonstrates that high-performance flight control doesn't require expensive proprietary hardware. The ESP32-based FC reads from an MPU-6050/9250 IMU via I2C, performs complementary/Kalman filter fusion for roll-pitch-yaw estimation, and runs cascaded PID loops for attitude stabilization — all within the tight timing constraints required for stable flight. RC receiver input is decoded via PPM/PWM, and motor outputs are sent to ESCs via PWM signals."
+                        data-tags="ESP32,IMU,PID,Flight Controller,PWM,ESC,Embedded C,ESP-IDF" data-link="#">
+                        <div class="stack-card__number">06</div>
+                        <div class="stack-card__body">
+                            <div class="stack-card__status"><span class="stack-card__status-dot" style="background:#00ff00;"></span> Completed</div>
+                            <h3 class="stack-card__title">Scratch ESP32 Flight Controller</h3>
+                            <div class="stack-card__tags">
+                                <span class="stack-card__tag">ESP32</span><span class="stack-card__tag">Embedded C</span><span class="stack-card__tag">IMU Fusion</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 7 -->
+                    <div class="stack-card reveal" style="z-index:7; --card-index:6;" data-type="project"
+                        data-title="STM32F405 Smart Dynamic Servo" data-meta="Embedded Systems • Actuators"
+                        data-desc="A low-cost, smart servo system inspired by Dynamixel motors, built on STM32F405 with position/velocity/torque control."
+                        data-full="This project replicates core Dynamixel functionality using an STM32F405, a DC motor, and a magnetic encoder. The firmware implements PID-based position and velocity control, real-time torque estimation from current sensing, and a custom serial protocol for bus communication. The result is a capable smart actuator at a fraction of commercial cost, with full customizability — suitable for robotic arms, grippers, and modular robot joints."
+                        data-tags="STM32F405,Smart Servo,Dynamixel,PID,Encoder,Embedded C,Actuator Design" data-link="#">
+                        <div class="stack-card__number">07</div>
+                        <div class="stack-card__body">
+                            <div class="stack-card__status"><span class="stack-card__status-dot" style="background:#00ff00;"></span> Completed</div>
+                            <h3 class="stack-card__title">STM32 Smart Actuator</h3>
+                            <div class="stack-card__tags">
+                                <span class="stack-card__tag">STM32</span><span class="stack-card__tag">Control</span><span class="stack-card__tag">Smart Actuator</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 8 -->
+                    <div class="stack-card reveal" style="z-index:8; --card-index:7;" data-type="project"
+                        data-title="STM32F405-Based Custom Flight Controller PCB" data-meta="PCB Design • Drones"
+                        data-desc="A custom-designed flight controller PCB centered on the STM32F405, with integrated IMU, barometer, OSD, and peripheral headers."
+                        data-full="This project involved designing a full custom FC PCB around the STM32F405RGT6. The board integrates an MPU-6000 IMU, BMP280 barometer, AT7456E OSD chip, and breakout headers for GPS, telemetry, RC input, camera, and VTX. The design was completed in KiCad, with careful attention to power supply decoupling, signal integrity for SPI peripherals, and compact 4-layer stackup. The board runs Betaflight firmware and was successfully tested in flight."
+                        data-tags="STM32F405,PCB Design,KiCad,Betaflight,IMU,Barometer,OSD,4-Layer PCB" data-link="#">
+                        <div class="stack-card__number">08</div>
+                        <div class="stack-card__body">
+                            <div class="stack-card__status"><span class="stack-card__status-dot" style="background:#00ff00;"></span> Completed</div>
+                            <h3 class="stack-card__title">Custom STM32F405 FC PCB</h3>
+                            <div class="stack-card__tags">
+                                <span class="stack-card__tag">PCB Design</span><span class="stack-card__tag">KiCad</span><span class="stack-card__tag">STM32</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 9 -->
+                    <div class="stack-card reveal" style="z-index:9; --card-index:8;" data-type="project"
+                        data-title="STM32H7 Custom FC + 4-in-1 ESC AIO Board" data-meta="PCB Design • High-Performance Drones"
+                        data-desc="An all-in-one flight controller and 4-in-1 ESC board based on STM32H7, designed for high-performance drone platforms."
+                        data-full="This is an advanced hardware project — a fully integrated AIO board combining an STM32H7 flight controller with a 4-in-1 ESC. The STM32H7 brings significant compute headroom for complex filtering and high-rate logging. The 4-in-1 ESC section uses dedicated gate drivers and MOSFETs for each channel. Design challenges included thermal management, isolation between high-current switching and sensitive FC sections, and maintaining a compact form factor. 6-layer stackup design in KiCad."
+                        data-tags="STM32H7,4-in-1 ESC,AIO Board,PCB Design,KiCad,Gate Driver,Power Electronics,6-Layer PCB" data-link="#">
+                        <div class="stack-card__number">09</div>
+                        <div class="stack-card__body">
+                            <div class="stack-card__status"><span class="stack-card__status-dot"></span> In Progress</div>
+                            <h3 class="stack-card__title">STM32H7 AIO FC/ESC PCB</h3>
+                            <div class="stack-card__tags">
+                                <span class="stack-card__tag">STM32H7</span><span class="stack-card__tag">Power Electronics</span><span class="stack-card__tag">6-Layer PCB</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 10 -->
+                    <div class="stack-card reveal" style="z-index:10; --card-index:9;" data-type="project"
+                        data-title="ESP32 Mesh Topology Swarm Robots" data-meta="Swarm Robotics • Wireless Systems"
+                        data-desc="A swarm of ESP32-based robots communicating over a self-organizing mesh network for coordinated multi-agent task execution."
+                        data-full="This project implements a decentralized swarm system where each robot is an ESP32 node communicating via ESP-NOW in a mesh topology. There is no central coordinator — agents broadcast state and make local decisions based on consensus algorithms, enabling emergent behavior such as formation keeping and coverage mapping. The system was tested for flocking and leader-following scenarios. The mesh protocol handles dynamic node dropout and reconnection gracefully."
+                        data-tags="ESP32,ESP-NOW,Swarm Robotics,Mesh Network,Decentralized Control,Multi-Agent Systems" data-link="#">
+                        <div class="stack-card__number">10</div>
+                        <div class="stack-card__body">
+                            <div class="stack-card__status"><span class="stack-card__status-dot" style="background:#00ff00;"></span> Completed</div>
+                            <h3 class="stack-card__title">ESP32 Swarm Mesh Network</h3>
+                            <div class="stack-card__tags">
+                                <span class="stack-card__tag">ESP32</span><span class="stack-card__tag">Swarm</span><span class="stack-card__tag">Mesh Network</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 11 -->
+                    <div class="stack-card reveal" style="z-index:11; --card-index:10;" data-type="project"
+                        data-title="LiFi-Based Data Transfer System" data-meta="Optical Wireless • Communication"
+                        data-desc="A bidirectional LiFi data transfer system using ESP32, LED/LDR hardware, and MATLAB signal processing."
+                        data-full="This project demonstrates a functional LiFi (Light Fidelity) data link using visible light. An ESP32 modulates data onto an LED carrier, which is received by a photodetector and decoded via MATLAB. The system implements Manchester encoding for clock recovery, basic error detection, and an application-layer encryption scheme. A companion flashlight messaging app was also developed. This work served as the hardware foundation for several published VLC research papers."
+                        data-tags="LiFi,VLC,ESP32,MATLAB,Optical Wireless,Encryption,LED,LDR,Signal Processing" data-link="#">
+                        <div class="stack-card__number">11</div>
+                        <div class="stack-card__body">
+                            <div class="stack-card__status"><span class="stack-card__status-dot" style="background:#00ff00;"></span> Completed</div>
+                            <h3 class="stack-card__title">LiFi Optical Data Transfer</h3>
+                            <div class="stack-card__tags">
+                                <span class="stack-card__tag">LiFi</span><span class="stack-card__tag">VLC</span><span class="stack-card__tag">Signal Processing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="h-divider"></div>
+
+        <!-- ╔═══ RESEARCH ═══╗ -->
+        <section id="research">
+            <div class="section-container">
+                <div class="sect-header reveal">
+                    <p class="sect-label">03 — Research</p>
+                    <h2 class="sect-title">Publications &amp; <em>research</em></h2>
+                    <p class="sect-desc">Published work in metaheuristic optimization applied to real-world engineering
+                        problems.</p>
+                </div>
+
+                <div class="research-grid">
+                    <!-- Paper 1 -->
+                    <div class="research-item reveal" data-type="research"
+                        data-title="A Novel Multi-Objective Peacock-Graphite Optimization (MOPGO)"
+                        data-meta="AIP Conference Proceedings, 2026"
+                        data-abstract="This paper introduces MOPGO, a hybrid metaheuristic algorithm designed to solve complex engineering optimization problems with conflicting objectives. By combining the predatory patterns of peafowl with the structural search attributes of graphite crystal lattices, we achieve a superior balance between exploration and exploitation."
+                        data-authors="Om Patel, Dr. D. Verma, Arpit S."
+                        data-keywords="Optimization, Metaheuristics, Peacock-Graphite, Engineering Design"
+                        data-conf="AIP Conference on Advanced Computing"
+                        data-link="https://scholar.google.com/citations?user=L5sE4aoAAAAJ">
+                        <div class="research-item__date">AIP 2026</div>
+                        <h3 class="research-item__title">MOPGO: Hybrid Metaheuristic Optimization</h3>
+                        <p class="research-item__desc">Introducing a novel algorithm for multi-objective search in
+                            engineering design.</p>
+                        <div class="research-item__more">Read Abstract <i class="fas fa-plus"></i></div>
+                    </div>
+
+                    <!-- Paper 2 -->
+                    <div class="research-item reveal reveal-d1" data-type="research"
+                        data-title="Safety Transformer Optimization" data-meta="AIP Conference Proceedings, 2025"
+                        data-abstract="Decomposition-based multi-objective heat transfer search for safety transformer design. This study explores the trade-offs between thermal efficiency and material cost, providing a robust framework for industrial applications."
+                        data-authors="Om Patel, et al." data-keywords="HTS, EO, MFO, TEO Algorithms"
+                        data-conf="AIP Conf. 2025"
+                        data-link="https://pubs.aip.org/aip/acp/article-abstract/3217/1/040014/3327748">
+                        <div class="research-item__date">AIP 2025</div>
+                        <h3 class="research-item__title">Safety Transformer Optimization</h3>
+                        <p class="research-item__desc">Multi-objective heat transfer search for efficient industrial
+                            transformer design.</p>
+                        <div class="research-item__more">Read Abstract <i class="fas fa-plus"></i></div>
+                    </div>
+
+                    <!-- Paper 3 -->
+                    <div class="research-item reveal reveal-d2" data-type="research"
+                        data-title="Directional Overcurrent Relays" data-meta="Under Review - Power Grid"
+                        data-abstract="Optimal coordination using Rime Optimization Algorithm for power grid stability. We examine the effects of fault current variations on relay timing and propose a new coordination strategy that minimizes disruption."
+                        data-authors="Om Patel" data-keywords="RIME Optimizer, Power Grid, Protection"
+                    <div class="research-card reveal" data-type="research"
+                        data-title="Sustainable Electric Vehicle Infrastructures Using Stochastic Threshold Strategies"
+                        data-venue="International Journal (2024)"
+                        data-authors="Om S. Patel, et al."
+                        data-full="This work proposes a stochastic threshold-based deployment strategy for EV charging infrastructure along highway corridors. Using probabilistic traffic modeling and threshold optimization, the framework determines optimal station placement and capacity to maximize accessibility while minimizing grid stress and infrastructure cost."
+                        data-keywords="EV Infrastructure, Stochastic Optimization, Smart Grid" data-link="#">
+                        <div class="research-card__header">
+                            <span class="research-card__tag">Smart Grid</span>
+                            <span class="research-card__year">2024</span>
+                        </div>
+                        <h3 class="research-card__title">Stochastic EV Infrastructure</h3>
+                        <p class="research-card__abstract">Threshold-based deployment strategies for sustainable charging networks using probabilistic modeling.</p>
+                        <div class="research-card__footer">
+                            <span class="research-url">International Journal</span>
+                        </div>
+                    </div>
+
+                    <!-- Paper 4 -->
+                </div>
+
+                <div class="research-grid">
+                    <!-- Paper 1 -->
+                    <div class="research-item reveal" data-type="research"
+                        data-title="A Novel Multi-Objective Peacock-Graphite Optimization (MOPGO)"
+                        data-meta="AIP Conference Proceedings, 2026"
+                        data-abstract="This paper introduces MOPGO, a hybrid metaheuristic algorithm designed to solve complex engineering optimization problems with conflicting objectives. By combining the predatory patterns of peafowl with the structural search attributes of graphite crystal lattices, we achieve a superior balance between exploration and exploitation."
+                        data-authors="Om Patel, Dr. D. Verma, Arpit S."
+                        data-keywords="Optimization, Metaheuristics, Peacock-Graphite, Engineering Design"
+                        data-conf="AIP Conference on Advanced Computing"
+                        data-link="https://scholar.google.com/citations?user=L5sE4aoAAAAJ">
+                        <div class="research-item__date">AIP 2026</div>
+                        <h3 class="research-item__title">MOPGO: Hybrid Metaheuristic Optimization</h3>
+                        <p class="research-item__desc">Introducing a novel algorithm for multi-objective search in
+                            engineering design.</p>
+                        <div class="research-item__more">Read Abstract <i class="fas fa-plus"></i></div>
+                    </div>
+
+                    <!-- Paper 2 -->
+                    <div class="research-item reveal reveal-d1" data-type="research"
+                        data-title="Cost Optimization of EV Charging Infrastructures"
+                        data-meta="Robotics and Embedded Systems Journal"
+                        data-abstract="A comprehensive study on the economic viability and technical optimization of small-scale EV charging grids. This research utilizes the Whale Optimization Algorithm to find the global minimum for installation and operational costs while maintaining peak service quality."
+                        data-authors="Om Patel, Dr. R. Patel"
+                        data-keywords="EV Charging, WOA, Cost Analysis, Smart Grid" data-conf="IJRES 2025"
+                        data-link="#">
+                        <div class="research-item__date">IJRES 2025</div>
+                        <h3 class="research-item__title">Economic Optimization of Charging Grids</h3>
+                        <p class="research-item__desc">Applying WOA to minimize deployment costs of urban EV
+                            infrastructure.</p>
+                        <div class="research-item__more">Read Abstract <i class="fas fa-plus"></i></div>
+                    </div>
+                </div>
+
+                <div class="research-focus reveal">
+                    <h3 class="research-focus__title"><i class="fas fa-microscope"></i> Current Research Interests</h3>
+                    <ul class="research-focus__list">
+                        <li class="research-focus__item"><strong>SDM, DDM, TDM</strong> — Diode model optimization</li>
+                        <li class="research-focus__item"><strong>TOPSIS &amp; ANFIS</strong> — Multi-criteria decision
+                            making</li>
+                        <li class="research-focus__item"><strong>UAV Pathfinding</strong> — Modified A* Algorithm</li>
+                        <li class="research-focus__item"><strong>LiFi Technology</strong> — High-speed wireless
+                            communications</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="h-divider"></div>
+
+        <!-- ╔═══ SKILLS ═══╗ -->
+        <section id="skills">
+            <div class="section-container">
+                <div class="sect-header reveal">
+                    <p class="sect-label">04 — Arsenal</p>
+                    <h2 class="sect-title">Technical <em>skills</em></h2>
+                </div>
+                <div class="skills__rows reveal reveal-d1">
+                    <div class="skill-row">
+                        <span class="skill-row__label">Hardware</span>
+                        <div class="skill-row__tags">
+                            <div class="skill-tag"><span>Embedded Systems</span></div>
+                            <div class="skill-tag"><span>Microcontrollers</span></div>
+                            <div class="skill-tag"><span>PCB Design</span></div>
+                            <div class="skill-tag"><span>IoT</span></div>
+                            <div class="skill-tag"><span>Robotics</span></div>
+                        </div>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-row__label">Software &amp; Algorithms</span>
+                        <div class="skill-row__tags">
+                            <div class="skill-tag"><span>MATLAB / Simulink</span></div>
+                            <div class="skill-tag"><span>Python</span></div>
+                            <div class="skill-tag"><span>C / C++</span></div>
+                            <div class="skill-tag"><span>Pathfinding (A*)</span></div>
+                            <div class="skill-tag"><span>Computer Vision</span></div>
+                        </div>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-row__label">Core Competencies</span>
+                        <div class="skill-row__tags">
+                            <div class="skill-tag"><span>Optimization</span></div>
+                            <div class="skill-tag"><span>Machine Learning</span></div>
+                            <div class="skill-tag"><span>Signal Processing</span></div>
+                            <div class="skill-tag"><span>Research</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="h-divider"></div>
+
+        <!-- ╔═══════════════════════════════════════════════════════════╗
+             ║  FEEDBACK — INFINITE ROTATING TESTIMONIALS                ║
+             ╚═══════════════════════════════════════════════════════════╝ -->
+        <section id="feedback" class="feedback-section">
+            <div class="section-container">
+                <div class="sect-header reveal" style="text-align:center;">
+                    <p class="sect-label" style="justify-content:center;">05 — Testimonials</p>
+                    <h2 class="sect-title">What people <em>say</em></h2>
+                    <p class="sect-desc" style="margin:0 auto;">Words from mentors, collaborators, and colleagues I've
+                        had the privilege of working with.</p>
+                </div>
+            </div>
+
+            <div class="testimonial-marquee testimonial-rtl">
+                <div class="testimonial-track">
+                    <!-- Card 1 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__stars">★★★★★</div>
+                        <p class="testimonial-card__quote">"Om is one of the most driven students I've worked with. His
+                            ability to bridge theoretical optimization with practical engineering is remarkable. His
+                            research on multi-objective metaheuristics shows maturity well beyond his years."</p>
+                        <div class="testimonial-card__author">
+                            <div class="testimonial-card__avatar">RP</div>
+                            <div>
+                                <p class="testimonial-card__name">Dr. R. Patel</p>
+                                <p class="testimonial-card__role">Research Supervisor, PDEU</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__stars">★★★★★</div>
+                        <p class="testimonial-card__quote">"Working with Om on the micromouse project was an incredible
+                            experience. His problem-solving approach and dedication to getting every detail right made
+                            our multi-agent system actually work under competition pressure."</p>
+                        <div class="testimonial-card__author">
+                            <div class="testimonial-card__avatar">AK</div>
+                            <div>
+                                <p class="testimonial-card__name">Arjun K.</p>
+                                <p class="testimonial-card__role">Robotics Team Lead</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__stars">★★★★★</div>
+                        <p class="testimonial-card__quote">"Om's understanding of embedded systems is deep and
+                            practical. The ESP32 robotics suite he built demonstrated both technical skill and a genuine
+                            passion for building things that work in the real world."</p>
+                        <div class="testimonial-card__author">
+                            <div class="testimonial-card__avatar">SM</div>
+                            <div>
+                                <p class="testimonial-card__name">Prof. S. Mehta</p>
+                                <p class="testimonial-card__role">Faculty, Electronics Dept.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__stars">★★★★★</div>
+                        <p class="testimonial-card__quote">"Few engineers at this stage can publish research papers and
+                            build real hardware simultaneously. Om does both with impressive quality. His MOPGO paper
+                            introduced genuinely novel contributions to the field."</p>
+                        <div class="testimonial-card__author">
+                            <div class="testimonial-card__avatar">DV</div>
+                            <div>
+                                <p class="testimonial-card__name">Dr. D. Verma</p>
+                                <p class="testimonial-card__role">Co-Author, AIP Conference</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__stars">★★★★★</div>
+                        <p class="testimonial-card__quote">"Om brought energy and technical rigor to every brainstorming
+                            session. His UAV pathfinding work using modified A* is something I'd expect from a grad
+                            student, not an undergraduate. Truly exceptional."</p>
+                        <div class="testimonial-card__author">
+                            <div class="testimonial-card__avatar">NJ</div>
+                            <div>
+                                <p class="testimonial-card__name">Neha J.</p>
+                                <p class="testimonial-card__role">Research Collaborator</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DUPLICATE SET for seamless loop -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__stars">★★★★★</div>
+                        <p class="testimonial-card__quote">"Om is one of the most driven students I've worked with. His
+                            ability to bridge theoretical optimization with practical engineering is remarkable. His
+                            research on multi-objective metaheuristics shows maturity well beyond his years."</p>
+                        <div class="testimonial-card__author">
+                            <div class="testimonial-card__avatar">RP</div>
+                            <div>
+                                <p class="testimonial-card__name">Dr. R. Patel</p>
+                                <p class="testimonial-card__role">Research Supervisor, PDEU</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__stars">★★★★★</div>
+                        <p class="testimonial-card__quote">"Working with Om on the micromouse project was an incredible
+                            experience. His problem-solving approach and dedication to getting every detail right made
+                            our multi-agent system actually work under competition pressure."</p>
+                        <div class="testimonial-card__author">
+                            <div class="testimonial-card__avatar">AK</div>
+                            <div>
+                                <p class="testimonial-card__name">Arjun K.</p>
+                                <p class="testimonial-card__role">Robotics Team Lead</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__stars">★★★★★</div>
+                        <p class="testimonial-card__quote">"Om's understanding of embedded systems is deep and
+                            practical. The ESP32 robotics suite he built demonstrated both technical skill and a genuine
+                            passion for building things that work in the real world."</p>
+                        <div class="testimonial-card__author">
+                            <div class="testimonial-card__avatar">SM</div>
+                            <div>
+                                <p class="testimonial-card__name">Prof. S. Mehta</p>
+                                <p class="testimonial-card__role">Faculty, Electronics Dept.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__stars">★★★★★</div>
+                        <p class="testimonial-card__quote">"Few engineers at this stage can publish research papers and
+                            build real hardware simultaneously. Om does both with impressive quality. His MOPGO paper
+                            introduced genuinely novel contributions to the field."</p>
+                        <div class="testimonial-card__author">
+                            <div class="testimonial-card__avatar">DV</div>
+                            <div>
+                                <p class="testimonial-card__name">Dr. D. Verma</p>
+                                <p class="testimonial-card__role">Co-Author, AIP Conference</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__stars">★★★★★</div>
+                        <p class="testimonial-card__quote">"Om brought energy and technical rigor to every brainstorming
+                            session. His UAV pathfinding work using modified A* is something I'd expect from a grad
+                            student, not an undergraduate. Truly exceptional."</p>
+                        <div class="testimonial-card__author">
+                            <div class="testimonial-card__avatar">NJ</div>
+                            <div>
+                                <p class="testimonial-card__name">Neha J.</p>
+                                <p class="testimonial-card__role">Research Collaborator</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="h-divider"></div>
+
+        <!-- ╔═══════════════════════════════════════════════════════════╗
+             ║  GALLERY — INFINITE ROTATING MARQUEES                  ║
+             ╚═══════════════════════════════════════════════════════════╝ -->
+        <section id="gallery" class="gallery">
+            <div class="section-container">
+                <div class="sect-header reveal" style="text-align:center;">
+                    <p class="sect-label" style="justify-content:center;">06 — Gallery</p>
+                    <h2 class="sect-title">Moments in <em>motion</em></h2>
+                </div>
+            </div>
+
+            <div class="gallery__marquee">
+                <div class="gallery__overlay"></div>
+                <!-- Row 1: Left to Right -->
+                <div class="marquee-row marquee-row--ltr">
+                    <div class="marquee-track">
+                        <img src="/gallery/sky/sky1.jpg" alt="Tech detail" class="marquee-img">
+                        <img src="/gallery/sky/sky2.jpg" alt="Global network" class="marquee-img">
+                        <img src="/gallery/sky/sky3.jpg" alt="Developer keyboard" class="marquee-img">
+                        <img src="/gallery/sky/sky5.jpg" alt="Cyber security" class="marquee-img">
+                        <img src="/gallery/sky/sky6.jpg" alt="Cyber security" class="marquee-img">
+                        <img src="/gallery/sky/sky7.jpg" alt="Cyber security" class="marquee-img">
+                        <img src="/gallery/sky/sky8.jpg" alt="Cyber security" class="marquee-img">
+                        <img src="/gallery/sky/sky9.jpg" alt="Cyber security" class="marquee-img">
+                        <img src="/gallery/sky/sky10.jpg" alt="Cyber security" class="marquee-img">
+                        <img src="/gallery/sky/sky11.jpg" alt="Cyber security" class="marquee-img">
+                        <img src="/gallery/sky/sky12.jpg" class="marquee-img">
+                        <img src="/gallery/sky/sky13.jpg" class="marquee-img">
+                        <img src="/gallery/sky/sky14.jpg" class="marquee-img">
+                        <img src="/gallery/sky/sky15.jpg" class="marquee-img">
+                        <img src="/gallery/sky/sky16.jpg" class="marquee-img">
+                    </div>
+                </div>
+
+                <!-- Row 2: Right to Left -->
+                <div class="marquee-row marquee-row--rtl">
+                    <div class="marquee-track">
+                        <img src="/gallery/tech/t1.jpg" class="marquee-img">
+                        <img src="/gallery/tech/t2.jpg" class="marquee-img">
+                        <img src="/gallery/tech/t3.jpg" class="marquee-img">
+                        <img src="/gallery/tech/t4.jpg" class="marquee-img">
+                        <img src="/gallery/tech/t5.jpg" class="marquee-img">
+                        <img src="/gallery/tech/t6.jpg" class="marquee-img">
+                        <img src="/gallery/tech/t7.jpg" class="marquee-img">
+                        <img src="/gallery/tech/t8.jpg" class="marquee-img">
+                        <img src="/gallery/tech/t9.jpg" class="marquee-img">
+                        <img src="/gallery/tech/t10.jpg" class="marquee-img">
+                        <img src="/gallery/tech/t11.jpg" class="marquee-img">
+                        <img src="/gallery/tech/t12.jpg" class="marquee-img">
+                        <img src="/gallery/tech/t13.jpg" class="marquee-img">
+                        <img src="/gallery/tech/t14.jpg" class="marquee-img">
+
+                    </div>
+                </div>
+
+                <!-- Row 3: Left to Right -->
+                <div class="marquee-row marquee-row--ltr">
+                    <div class="marquee-track">
+                        <img src="/gallery/tp/tp2.jpg" class="marquee-img">
+                        <img src="/gallery/tp/tp3.jpg" class="marquee-img">
+                        <img src="/gallery/tp/tp4.jpg" class="marquee-img">
+                        <img src="/gallery/tp/tp5.jpg" class="marquee-img">
+                        <img src="/gallery/tp/tp6.jpg" class="marquee-img">
+                        <img src="/gallery/tp/tp7.jpg" class="marquee-img">
+                        <img src="/gallery/tp/tp8.jpg" class="marquee-img">
+                        <img src="/gallery/tp/tp9.jpg" class="marquee-img">
+                        <img src="/gallery/tp/tp10.jpg" class="marquee-img">
+                        <img src="/gallery/tp/tp11.jpg" class="marquee-img">
+                        <img src="/gallery/tp/tp12.jpg" class="marquee-img">
+                        <img src="/gallery/tp/tp13.jpg" class="marquee-img">
+                        <img src="/gallery/tp/tp14.jpg" class="marquee-img">
+                        <img src="/gallery/tp/tp15.jpg" class="marquee-img">
+                        <img src="/gallery/tp/tp16.jpg" class="marquee-img">
+                        <img src="/gallery/tp/tp17.jpg" class="marquee-img">
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        </section>
+
+        <div class="h-divider"></div>
+
+        <!-- ╔═══ BLOG ═══╗ -->
+        <section id="blog" class="blog">
+            <div class="section-container">
+                <div class="sect-header reveal" style="text-align:left;">
+                    <p class="sect-label">07 — Blog</p>
+                    <h2 class="sect-title">Thoughts &amp; <em>theories</em></h2>
+                </div>
+
+                <div class="blog__list">
+                    <a href="#" class="blog-item reveal" data-type="blog"
+                        data-title="The Future of Single-Server EV Charging Frameworks" data-date="Oct 12, 2026"
+                        data-content="As electric vehicle adoption surges, the bottleneck isn't just battery density—it's infrastructure management. In this post, I explore how single-server frameworks can be optimized using decentralized edge computing to handle rapid charging spikes without destabilizing the local grid. We contrast standard load-sharing with our proposed 'Priority-Queueing' model..."
+                        data-blogger="https://flux-robotics.blogspot.com">
+                        <div class="blog-item__date">Oct 12, 2026</div>
+                        <h3 class="blog-item__title">The Future of Single-Server EV Charging Frameworks</h3>
+                        <div class="blog-item__arrow"><i class="fas fa-arrow-right"></i></div>
+                    </a>
+
+                    <a href="#" class="blog-item reveal reveal-d1" data-type="blog"
+                        data-title="Implementing MOPGO for High-Efficiency BLDC Motors" data-date="Aug 05, 2026"
+                        data-content="Efficiency in Brushless DC (BLDC) motors is a multi-dimensional challenge involving thermal management, torque ripple reduction, and power factor correction. By applying the Multi-Objective Peacock-Graphite Optimization (MOPGO) algorithm, we can find Pareto-optimal configurations that traditional PID tuning simply cannot reach..."
+                        data-blogger="https://flux-robotics.blogspot.com">
+                        <div class="blog-item__date">Aug 05, 2026</div>
+                        <h3 class="blog-item__title">Implementing MOPGO for High-Efficiency BLDC Motors</h3>
+                        <div class="blog-item__arrow"><i class="fas fa-arrow-right"></i></div>
+                    </a>
+
+                    <a href="#" class="blog-item reveal reveal-d2" data-type="blog"
+                        data-title="Lessons Learned from the ABU Robocon Micromouse Maze" data-date="Mar 22, 2026"
+                        data-content="Robocon isn't just about winning; it's about failure at scale. Our micromouse project taught us that sensor fusion is only as good as your mechanical tolerances. A 1mm misalignment in the infrared array can lead to a total crash at high speeds. Here's a breakdown of our maze-solving recursive backtrack algorithm, and why we eventualy shifted to a flood-fill approach..."
+                        data-blogger="https://flux-robotics.blogspot.com">
+                        <div class="blog-item__date">Mar 22, 2026</div>
+                        <h3 class="blog-item__title">Lessons Learned from the ABU Robocon Micromouse Maze</h3>
+                        <div class="blog-item__arrow"><i class="fas fa-arrow-right"></i></div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div class="h-divider"></div>
+
+        <!-- ╔═══ CONTACT ═══╗ -->
+        <section id="contact" class="contact">
+            <div class="section-container">
+                <p class="sect-label reveal" style="justify-content:center;">07 — Contact</p>
+                <h2 class="contact__big reveal reveal-d1">Let's build something<br><em>extraordinary</em></h2>
+                <p class="contact__desc reveal reveal-d2">Available for research collaborations, engineering projects,
+                    and opportunities pushing the boundaries of robotics and AI.</p>
+                <div class="contact__links reveal reveal-d3">
+                    <a href="mailto:omspatel15@gmail.com" class="contact__link magnetic"><i class="fas fa-envelope"></i>
+                        Email</a>
+                    <a href="https://github.com/Flux-15" target="_blank" class="contact__link magnetic"><i
+                            class="fab fa-github"></i> GitHub</a>
+                    <a href="https://www.linkedin.com/in/om-patel-0591b8321" target="_blank"
+                        class="contact__link magnetic"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=L5sE4aoAAAAJ"
+                        target="_blank" class="contact__link magnetic"><i class="fas fa-graduation-cap"></i> Scholar</a>
+                </div>
+                <p class="contact__phone reveal reveal-d4"><i class="fas fa-phone"></i> +91 6357100306</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Designed &amp; Engineered by FluX &copy; 2026</p>
+    </footer>
+
+    <button id="scroll-top" class="scroll-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- ╔═══ EASTER EGG TERMINAL ═══╗ -->
+    <div id="secret-terminal" class="terminal-overlay">
+        <div class="terminal-content">
+            <div class="terminal-header">
+                <span class="terminal-title">flux_os v1.0.4</span>
+                <span class="terminal-close">&times;</span>
+            </div>
+            <div class="terminal-body" id="terminal-output">
+                <p>Welcome to FluX_OS.</p>
+                <p>Type 'help' for a list of available commands.</p>
+            </div>
+            <div class="terminal-input-line">
+                <span class="terminal-prompt">flux@sys:~$</span>
+                <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" spellcheck="false"
+                    autofocus>
+            </div>
+        </div>
+    </div>
+    <!-- ╔═══ GLOBAL DETAIL OVERLAY ═══╗ -->
+    <div id="detail-overlay" class="detail-overlay">
+        <div class="detail-overlay__bg"></div>
+        <div class="detail-overlay__container">
+            <button class="detail-overlay__close" aria-label="Close detail view">
+                <span class="close-text">Close</span>
+                <span class="close-icon">&times;</span>
+            </button>
+            <div class="detail-overlay__content" id="detail-content">
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
